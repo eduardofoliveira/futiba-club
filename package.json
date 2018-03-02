@@ -1,0 +1,28 @@
+{
+  "name": "futiba-club",
+  "version": "1.0.0",
+  "description": "Futiba-Club FS3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Eduardo F Oliveira",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "mysql2": "^1.5.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardofoliveira/futiba-club.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eduardofoliveira/futiba-club/issues"
+  },
+  "homepage": "https://github.com/eduardofoliveira/futiba-club#readme"
+}
