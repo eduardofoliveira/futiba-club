@@ -59,8 +59,8 @@
                             <td><a href="/groups/<%= user.id %>"><%= user.name %></a></td>
                             <td><%= user.role %></td>
                             <td>
-                                <a href="/groups/<%= user.id %>/pending/yes">Permitir</a>
-                                <a href="/groups/<%= user.id %>/pending/no">Negar</a>
+                                <a href="/groups/<%= group.id %>/pending/<%= user.id %>/yes">Permitir</a>
+                                <a href="/groups/<%= group.id %>/pending/<%= user.id %>/no">Negar</a>
                             </td>
                         </tr>
                         <% }) %>
@@ -73,7 +73,29 @@
             <% if(group.role === 'pending'){ %>
             <p class="alert alert-info">Você precisa ser aprovado pelo dono do grupo.</p>
             <% }else{ %>
-            <p>Usuário normal</p>
+            <form method="post">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Jogos</th>
+                            <th>Pontuação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% games.forEach(game => { %>
+                            <tr>
+                                <td>
+                                    <input class="form-control" name="team_<%= game.id %>[a]">
+                                    <%= game.team_a %> vs <%= game.team_b %>
+                                    <input class="form-control" name="team_<%= game.id %>[b]">
+                                </td>
+                                <td>100</td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+                <input type="submit" value="Salvar apostas">
+            </form>
             <% } %>
         </div>
     </section>
